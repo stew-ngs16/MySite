@@ -1,74 +1,159 @@
 @charset "utf-8";
 
+/* common */
+
 body {
   margin: 0;
 }
 
-header {
-  background-color: #eee;
-  text-align: center;
-  padding: 32px 0;
+img {
+  vertical-align: bottom;
+}
+
+.btn {
+  background: green;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
   
 }
 
-header img {
-  border-radius: 50%;
-  /* display: block; 
-  margin: 0 auto; */
+h2 {
+  margin: 0;
+  font-weight: normal;
+  text-align: center;
 }
 
-h1 {
+h3 {
+  margin: 0;
   font-weight: normal;
-  font-size: 24px;
-  margin: 16px 0 0
 }
 
 p {
   margin: 0;
 }
 
-main {
-   padding: 64px 0; 
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  width: calc(100% - 32px);
+  box-sizing: border-box;
 }
 
-h2 {
-  text-align: center;
+/* header */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+h1 {
   margin: 0;
-  font-weight: normal;
-  font-size: 24px;
+  font-size: 0;
 }
 
-h3 {
-  margin: 16px 0 0;
-  font-weight: normal;
-  font-size: 20px;
+.logo-pc {
+  display: none;
 }
 
-section {
-  width: 400px;
-  margin: 64px auto 0;
-}
+/* hero */
 
-section p {
-  margin-top: 16px;
-  line-height: 1.8;
-  /* margin-bottom: 64px; */
-}
-
-footer {
-  border-top: 1px solid #ccc;
+.hero {
+  background: skyblue url(bg.png) repeat-x center bottom;
   text-align: center;
+  padding-top: 64px;
+}
+
+.hero img {
+  margin-top: 64px;
+}
+
+.hero .btn {
+  margin-top: 64px;
+}
+
+/* features */
+
+.features {
   padding: 64px;
 }
 
-small{
-  font-size: 14px;
-  color: #aaa;
+.feature {
+  margin-top: 64px;
 }
 
-address {
+.pic {
+  text-align: center;
+}
+
+.feature h3 {
   margin-top: 16px;
 }
-a:hover {
-  opacity: .7;
+
+.feature p {
+  margin-top: 16px;
+}
+
+/* footer */
+footer {
+  background: #333;
+  color: white;
+  padding: 64px;
+  text-align: center;
+}
+
+small {
+  font-size: 14px;
+}
+
+/* large screen */
+
+@media (min-width: 600px) {
+
+  /* header */
+  
+.logo-sp {
+  display: none;
+}
+
+.logo-pc {
+  display: inline;
+}
+/* hero */
+
+.hero .container {
+  display: flex;
+  align-items: center;
+}
+
+.hero .container div {
+  flex: 1;
+}
+
+.hero img {
+  margin-top: 0;
+}
+
+/* features */
+
+.feature {
+  display: flex;
+  gap: 32px;
+}
+
+.pic {
+  width: 300px;
+}
+
+.desc {
+  flex: 1;
+}
+
+.reversed {
+  flex-direction: row-reverse;
+}
 }
